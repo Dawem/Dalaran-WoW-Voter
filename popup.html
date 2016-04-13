@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dalaran WoW Voter</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
+  </head>
+  <body>
+    <h2>Dalaran WoW Voter</h2>
+	<label for"username">Username</label>
+	<input type="text" id="username"></input>
+	<label for"password">Password</label>
+	<input type="password" id="password"></input>
+	<div id="voteCountDiv" hidden>
+	<label for"voteCount">Successful Votes</label>
+	<input type="text" id="voteCount" style="border:none" readonly></input>
+	</div>
+	<label for"timeLeft">Time until next vote</label>
+	<input type="text" id="timeLeft" style="border:none" readonly></input><p>
+    <button id="saveSettings">Save</button> 
+	<button id="goToPage">Vote Page</button>
+  </body>
+</html>

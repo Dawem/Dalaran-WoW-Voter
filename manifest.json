@@ -1,0 +1,26 @@
+ {
+  "name": "Dalaran WoW Voter",
+  "version": "1.0.3",
+  "description": "One click voting for Dalaran WoW",
+  "background": {"page": "background.html"},
+  "manifest_version": 2,
+  "permissions": [
+	"storage",
+	"activeTab",
+	"notifications"
+	],
+  "browser_action": {
+    "name": "Manipulate DOM",
+    "icons": ["icon.png"],
+    "default_icon": "icon.png",
+	"default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [ {
+    "js": [ "jquery.min.js", "script.js" ],
+    "css": ["customStyles.css"],
+    "matches": [ "http://*/*", "https://*/*"]
+  }]
+}
