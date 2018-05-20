@@ -1,26 +1,23 @@
- {
-  "name": "Dalaran WoW Voter",
-  "version": "1.0.3",
-  "description": "One click voting for Dalaran WoW",
-  "background": {"page": "background.html"},
-  "manifest_version": 2,
-  "permissions": [
-	"storage",
-	"activeTab",
-	"notifications"
-	],
-  "browser_action": {
-    "name": "Manipulate DOM",
-    "icons": ["icon.png"],
-    "default_icon": "icon.png",
-	"default_popup": "popup.html"
-  },
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "content_scripts": [ {
-    "js": [ "jquery.min.js", "script.js" ],
-    "css": ["customStyles.css"],
-    "matches": [ "http://*/*", "https://*/*"]
-  }]
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html",
+      "icons": [ "icon.png" ],
+      "name": "Manipulate DOM"
+   },
+   "content_scripts": [ {
+      "css": [ "customStyles.css" ],
+      "js": [ "jquery.min.js", "script.js" ],
+      "matches": [ "http://www.dalaran-wow.com/*", "https://www.dalaran-wow.com/*" ]
+   } ],
+   "description": "One click voting for Dalaran WoW",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmvb36q9baOEAo1R5Ui3lBT7dU+zZVdoEAKyY8uzef25c6FdXsBL+8vRoFfM+1unhhh2bP6R/fawZ2jqtWATipI+O849IX0h4fMeGKbkNQPJpAstumwl1r2zd3tGqee9LmQ5FvdBMTOqVMiH7PFXYlSYinr5SUgb0qQCc665vEJITxKAhjD746boeXihlypsUKA50p3opmQdPyPO47en59Ch9fAMZioxVLC/7V7evFWQ9ReVpbzBiSM/r1dTx2UZdkF77mLMUq7ReNgZDgpuT5RBf6O8ZoC+DjY2EYdIUxlSIzjKf/Qcx4gLvoRtXrqSyqY/akNe2tgB4/f8mXNO1kwIDAQAB",
+   "manifest_version": 2,
+   "name": "Dalaran WoW Voter",
+   "permissions": [ "storage", "activeTab", "notifications" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.9"
 }

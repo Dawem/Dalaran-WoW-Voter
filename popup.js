@@ -34,7 +34,7 @@ $(function(){
 		var password = $("#password").val();
 		if (username && password){
 			chrome.storage.sync.set({'username': username, 'password': password}, function() {
-				var newURL = "http://www.dalaran-wow.com/";
+				var newURL = "http://www.dalaran-wow.com/account-log/";
 				chrome.tabs.create({ url: newURL });
 			});
 		}
@@ -42,7 +42,7 @@ $(function(){
 	
 	$("#goToPage").on("click", function(){
 		chrome.tabs.getSelected(null, function(tab) {
-			var newURL = "http://www.dalaran-wow.com/account/vote/";
+			var newURL = "http://www.dalaran-wow.com/account-log/";
 			chrome.tabs.create({ url: newURL });
 		});
 	});

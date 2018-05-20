@@ -1,13 +1,5 @@
 if (window.location.hostname === "www.dalaran-wow.com"){
-	var voteCount;
-	chrome.storage.sync.get('voteCount', function(data) {
-		if(data.voteCount){
-			voteCount = data.voteCount;
-		} else {
-			voteCount = 0;
-		}
-	});
-
+	console.log("At dalaran site...");
 	chrome.storage.sync.get(['username','password'], function(data){
 		var username = data.username;
 		var password = data.password;
@@ -24,8 +16,23 @@ if (window.location.hostname === "www.dalaran-wow.com"){
 			console.log("Not logged in.");
 		}
 	});
+	
+	var voteCount;
+	chrome.storage.sync.get('voteCount', function(data) {
+		if(data.voteCount){
+			voteCount = data.voteCount;
+		} else {
+			voteCount = 0;
+		}
+	});
+}
+if (window.location.href === "http://www.dalaran-wow.com/account-log/"){
+	setTimeout(function(){
+		window.location.replace("http://www.dalaran-wow.com/account/vote/");
+	},3000)
+}
 
-	function vote (voteId){
+function vote (voteId){
 		if (voteId <= 4){
 			$.post("http://www.dalaran-wow.com/account/vote/" + voteId, function(data){
 				if (data.indexOf("You have already voted in the last 24 hours") >= 0){
@@ -44,4 +51,3 @@ if (window.location.hostname === "www.dalaran-wow.com"){
 			console.log("Done voting.")
 		}
 	}
-}
